@@ -1,0 +1,425 @@
+[27/Sep/2021 10:19:57] Watching for file changes with StatReloader
+[27/Sep/2021 10:20:03] Not Found: /
+[27/Sep/2021 10:20:03] "GET / HTTP/1.1" 404 12596
+[27/Sep/2021 10:20:12] "GET /admin/ HTTP/1.1" 302 0
+[27/Sep/2021 10:20:12] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 12223
+[27/Sep/2021 10:20:12] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[27/Sep/2021 10:20:12] "GET /static/admin/css/login.css HTTP/1.1" 304 0
+[27/Sep/2021 10:20:12] "GET /static/admin/css/base.css HTTP/1.1" 200 19513
+[27/Sep/2021 10:20:12] "GET /static/admin/css/responsive.css HTTP/1.1" 200 18545
+[27/Sep/2021 10:20:12] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[27/Sep/2021 10:20:12] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[27/Sep/2021 10:20:13] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[27/Sep/2021 10:20:13] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+[28/Sep/2021 09:54:44] Watching for file changes with StatReloader
+[28/Sep/2021 09:54:49] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/base.py", line 233, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/debug_toolbar/middleware.py", line 67, in __call__
+    panel.generate_stats(request, response)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/debug_toolbar/panels/request.py", line 66, in generate_stats
+    for k in sorted(request.session.keys())
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/base.py", line 169, in keys
+    return self._session.keys()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/base.py", line 238, in _get_session
+    self._session_cache = self.load()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 431, in get
+    num = len(clone)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 262, in __len__
+    self._fetch_all()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: django_session
+[28/Sep/2021 09:54:50] "GET / HTTP/1.1" 500 160677
+[28/Sep/2021 09:54:51] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/base.py", line 233, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/debug_toolbar/middleware.py", line 67, in __call__
+    panel.generate_stats(request, response)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/debug_toolbar/panels/request.py", line 66, in generate_stats
+    for k in sorted(request.session.keys())
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/base.py", line 169, in keys
+    return self._session.keys()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/base.py", line 238, in _get_session
+    self._session_cache = self.load()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 431, in get
+    num = len(clone)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 262, in __len__
+    self._fetch_all()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: django_session
+[28/Sep/2021 09:54:51] "GET /favicon.ico HTTP/1.1" 500 160591
+[28/Sep/2021 10:28:44] Watching for file changes with StatReloader
+[28/Sep/2021 10:28:47] Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/base.py", line 233, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/debug_toolbar/middleware.py", line 67, in __call__
+    panel.generate_stats(request, response)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/debug_toolbar/panels/request.py", line 66, in generate_stats
+    for k in sorted(request.session.keys())
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/base.py", line 169, in keys
+    return self._session.keys()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/base.py", line 238, in _get_session
+    self._session_cache = self.load()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 431, in get
+    num = len(clone)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 262, in __len__
+    self._fetch_all()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: django_session
+[28/Sep/2021 10:28:47] "GET / HTTP/1.1" 500 160677
+[28/Sep/2021 10:28:48] Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/base.py", line 233, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+sqlite3.OperationalError: no such table: django_session
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/debug_toolbar/middleware.py", line 67, in __call__
+    panel.generate_stats(request, response)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/debug_toolbar/panels/request.py", line 66, in generate_stats
+    for k in sorted(request.session.keys())
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/base.py", line 169, in keys
+    return self._session.keys()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/base.py", line 238, in _get_session
+    self._session_cache = self.load()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/db.py", line 43, in load
+    s = self._get_session_from_db()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 431, in get
+    num = len(clone)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 262, in __len__
+    self._fetch_all()
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/aagontuk/.local/lib/python3.9/site-packages/django/db/backends/sqlite3/base.py", line 423, in execute
+    return Database.Cursor.execute(self, query, params)
+django.db.utils.OperationalError: no such table: django_session
+[28/Sep/2021 10:28:48] "GET /favicon.ico HTTP/1.1" 500 160591
+[28/Sep/2021 10:29:50] Watching for file changes with StatReloader
+[28/Sep/2021 10:29:56] Not Found: /
+[28/Sep/2021 10:29:56] "GET / HTTP/1.1" 404 12596
+[28/Sep/2021 10:29:56] "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 11479
+[28/Sep/2021 10:29:56] "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 11275
+[28/Sep/2021 10:29:57] Not Found: /favicon.ico
+[28/Sep/2021 10:29:57] "GET /favicon.ico HTTP/1.1" 404 12658
+[28/Sep/2021 10:45:05] Watching for file changes with StatReloader
+[28/Sep/2021 10:45:10] Not Found: /
+[28/Sep/2021 10:45:10] "GET / HTTP/1.1" 404 12596
+[28/Sep/2021 10:45:15] "GET /admin HTTP/1.1" 301 0
+[28/Sep/2021 10:45:16] "GET /admin/ HTTP/1.1" 302 0
+[28/Sep/2021 10:45:16] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 12224
+[28/Sep/2021 10:45:16] "GET /static/admin/css/base.css HTTP/1.1" 200 19513
+[28/Sep/2021 10:45:16] "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[28/Sep/2021 10:45:16] "GET /static/admin/css/responsive.css HTTP/1.1" 200 18545
+[28/Sep/2021 10:45:16] "GET /static/admin/css/login.css HTTP/1.1" 304 0
+[28/Sep/2021 10:45:16] "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[28/Sep/2021 10:45:16] "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+[28/Sep/2021 10:45:17] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+[28/Sep/2021 10:45:17] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+[28/Sep/2021 10:45:20] "POST /admin/login/?next=/admin/ HTTP/1.1" 200 12383
+[28/Sep/2021 10:45:21] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+[28/Sep/2021 10:46:25] Watching for file changes with StatReloader
+[28/Sep/2021 10:46:35] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[28/Sep/2021 10:46:35] "GET /admin/ HTTP/1.1" 200 21386
+[28/Sep/2021 10:46:36] "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[28/Sep/2021 10:46:36] "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[28/Sep/2021 10:46:36] "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[28/Sep/2021 10:46:42] "GET /admin/tracker/visithistory/ HTTP/1.1" 200 20451
+[28/Sep/2021 10:46:42] "GET /static/admin/css/changelists.css HTTP/1.1" 200 6874
+[28/Sep/2021 10:46:42] "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 287630
+[28/Sep/2021 10:46:42] "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 5984
+[28/Sep/2021 10:46:42] "GET /static/admin/js/core.js HTTP/1.1" 200 5698
+[28/Sep/2021 10:46:42] "GET /static/admin/js/actions.js HTTP/1.1" 200 7664
+[28/Sep/2021 10:46:42] "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+[28/Sep/2021 10:46:42] "GET /static/admin/js/urlify.js HTTP/1.1" 200 7902
+[28/Sep/2021 10:46:42] "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+[28/Sep/2021 10:46:42] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:46:42] "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+[28/Sep/2021 10:46:43] "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+[28/Sep/2021 10:46:46] "GET /admin/tracker/visithistory/add/ HTTP/1.1" 200 24910
+[28/Sep/2021 10:46:46] "GET /static/admin/css/forms.css HTTP/1.1" 200 8804
+[28/Sep/2021 10:46:46] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:46:46] "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+[28/Sep/2021 10:46:46] "GET /static/admin/css/widgets.css HTTP/1.1" 200 11097
+[28/Sep/2021 10:46:47] "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+[28/Sep/2021 10:46:52] "GET /admin/agent/dso/add/?_to_field=id&_popup=1 HTTP/1.1" 200 14344
+[28/Sep/2021 10:46:53] "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[28/Sep/2021 10:46:53] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:47:18] "POST /admin/agent/dso/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10369
+[28/Sep/2021 10:47:18] "GET /static/admin/js/popup_response.js HTTP/1.1" 200 551
+[28/Sep/2021 10:47:24] "GET /admin/agent/agent/add/?_to_field=id&_popup=1 HTTP/1.1" 200 29577
+[28/Sep/2021 10:47:25] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:47:50] "GET /admin/agent/distributor/add/?_to_field=id&_popup=1 HTTP/1.1" 200 14383
+[28/Sep/2021 10:47:50] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:48:00] "GET /admin/accounts/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 14678
+[28/Sep/2021 10:48:01] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:48:24] "POST /admin/accounts/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 14849
+[28/Sep/2021 10:48:24] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:48:38] "POST /admin/accounts/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10365
+[28/Sep/2021 10:48:43] "POST /admin/agent/distributor/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10371
+[28/Sep/2021 10:48:52] "GET /admin/agent/ma/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12941
+[28/Sep/2021 10:48:53] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:48:57] "POST /admin/agent/ma/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10367
+[28/Sep/2021 10:49:27] "GET /admin/location/region/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12963
+[28/Sep/2021 10:49:27] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:49:36] "POST /admin/location/region/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10368
+[28/Sep/2021 10:49:42] "GET /admin/location/area/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12950
+[28/Sep/2021 10:49:43] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:49:54] "POST /admin/location/area/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10371
+[28/Sep/2021 10:49:58] "GET /admin/location/division/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12974
+[28/Sep/2021 10:49:59] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:50:06] "POST /admin/location/division/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10369
+[28/Sep/2021 10:50:17] "GET /admin/location/upazila/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12980
+[28/Sep/2021 10:50:18] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:50:23] "POST /admin/location/upazila/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10370
+[28/Sep/2021 10:50:26] "GET /admin/location/union/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12978
+[28/Sep/2021 10:50:26] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:50:33] "POST /admin/location/union/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10367
+[28/Sep/2021 10:50:38] "POST /admin/agent/agent/add/?_to_field=id&_popup=1 HTTP/1.1" 200 30034
+[28/Sep/2021 10:50:39] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:50:46] "GET /admin/location/district/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12974
+[28/Sep/2021 10:50:47] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:50:51] "POST /admin/location/district/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10370
+[28/Sep/2021 10:50:58] "POST /admin/agent/agent/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10364
+[28/Sep/2021 10:51:08] "POST /admin/tracker/visithistory/add/ HTTP/1.1" 302 0
+[28/Sep/2021 10:51:08] "GET /admin/tracker/visithistory/ HTTP/1.1" 200 21865
+[28/Sep/2021 10:51:08] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:51:09] "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+[28/Sep/2021 10:51:15] "GET /admin/tracker/visithistory/add/ HTTP/1.1" 200 24984
+[28/Sep/2021 10:51:15] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:51:25] "GET /admin/agent/dso/add/?_to_field=id&_popup=1 HTTP/1.1" 200 14379
+[28/Sep/2021 10:51:25] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:51:38] "GET /admin/accounts/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 14677
+[28/Sep/2021 10:51:39] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:51:56] "POST /admin/accounts/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10367
+[28/Sep/2021 10:52:00] "POST /admin/agent/dso/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10368
+[28/Sep/2021 10:52:06] "GET /admin/agent/agent/add/?_to_field=id&_popup=1 HTTP/1.1" 200 29917
+[28/Sep/2021 10:52:07] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:52:51] "GET /admin/agent/distributor/add/?_to_field=id&_popup=1 HTTP/1.1" 200 14454
+[28/Sep/2021 10:52:52] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:53:05] "POST /admin/agent/distributor/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10374
+[28/Sep/2021 10:53:08] "GET /admin/agent/dso/add/?_to_field=id&_popup=1 HTTP/1.1" 200 14415
+[28/Sep/2021 10:53:09] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:53:17] "POST /admin/agent/dso/add/?_to_field=id&_popup=1 HTTP/1.1" 200 14670
+[28/Sep/2021 10:53:17] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:53:27] "POST /admin/agent/dso/add/?_to_field=id&_popup=1 HTTP/1.1" 200 14590
+[28/Sep/2021 10:53:28] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:53:42] "POST /admin/agent/dso/add/?_to_field=id&_popup=1 HTTP/1.1" 200 14589
+[28/Sep/2021 10:53:42] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:53:50] "GET /admin/accounts/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 14677
+[28/Sep/2021 10:53:51] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:54:09] "POST /admin/accounts/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 14853
+[28/Sep/2021 10:54:09] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:54:30] "POST /admin/accounts/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10371
+[28/Sep/2021 10:54:39] "POST /admin/agent/dso/add/?_to_field=id&_popup=1 HTTP/1.1" 200 14628
+[28/Sep/2021 10:54:39] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:54:43] "GET /admin/accounts/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 14677
+[28/Sep/2021 10:54:44] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:55:03] "POST /admin/accounts/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10367
+[28/Sep/2021 10:55:11] "POST /admin/agent/dso/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10368
+[28/Sep/2021 10:55:18] "GET /admin/agent/ma/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12941
+[28/Sep/2021 10:55:19] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:55:23] "POST /admin/agent/ma/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10366
+[28/Sep/2021 10:55:55] "POST /admin/agent/agent/add/?_to_field=id&_popup=1 HTTP/1.1" 200 30562
+[28/Sep/2021 10:55:55] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:56:06] "GET /admin/location/region/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12962
+[28/Sep/2021 10:56:07] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:56:13] "POST /admin/location/region/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10368
+[28/Sep/2021 10:56:16] "GET /admin/location/area/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12950
+[28/Sep/2021 10:56:17] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:56:24] "POST /admin/location/area/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10370
+[28/Sep/2021 10:56:28] "GET /admin/location/division/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12974
+[28/Sep/2021 10:56:29] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:56:37] "POST /admin/location/division/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10370
+[28/Sep/2021 10:56:44] "POST /admin/agent/agent/add/?_to_field=id&_popup=1 HTTP/1.1" 200 30480
+[28/Sep/2021 10:56:44] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:56:50] "GET /admin/location/district/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12974
+[28/Sep/2021 10:56:51] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:56:54] "POST /admin/location/district/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10370
+[28/Sep/2021 10:56:57] "GET /admin/location/upazila/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12980
+[28/Sep/2021 10:56:58] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:57:03] "POST /admin/location/upazila/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10369
+[28/Sep/2021 10:57:07] "GET /admin/location/union/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12978
+[28/Sep/2021 10:57:08] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:57:11] "POST /admin/location/union/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10367
+[28/Sep/2021 10:57:15] "POST /admin/agent/agent/add/?_to_field=id&_popup=1 HTTP/1.1" 200 10365
+[28/Sep/2021 10:57:18] "POST /admin/tracker/visithistory/add/ HTTP/1.1" 200 25247
+[28/Sep/2021 10:57:19] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 10:57:26] "POST /admin/tracker/visithistory/add/ HTTP/1.1" 302 0
+[28/Sep/2021 10:57:26] "GET /admin/tracker/visithistory/ HTTP/1.1" 200 22097
+[28/Sep/2021 10:57:27] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
+[28/Sep/2021 11:34:57] Watching for file changes with StatReloader
+[28/Sep/2021 11:35:01] Not Found: /
+[28/Sep/2021 11:35:01] "GET / HTTP/1.1" 404 12581
+[28/Sep/2021 11:35:25] "GET /admin/ HTTP/1.1" 302 0
+[28/Sep/2021 11:35:26] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 12208
+[28/Sep/2021 11:35:30] "POST /admin/login/?next=/admin/ HTTP/1.1" 200 12364
+[28/Sep/2021 11:35:34] "POST /admin/login/?next=/admin/ HTTP/1.1" 200 12364
+[28/Sep/2021 11:35:39] "POST /admin/login/?next=/admin/ HTTP/1.1" 200 12364
+[28/Sep/2021 11:36:50] Watching for file changes with StatReloader
+[28/Sep/2021 11:36:53] Not Found: /
+[28/Sep/2021 11:36:53] "GET / HTTP/1.1" 404 12579
+[28/Sep/2021 11:36:58] "GET /admin/ HTTP/1.1" 302 0
+[28/Sep/2021 11:36:59] "GET /admin/login/?next=/admin/ HTTP/1.1" 200 12207
+[28/Sep/2021 11:37:08] "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+[28/Sep/2021 11:37:09] "GET /admin/ HTTP/1.1" 200 21370
+[28/Sep/2021 11:37:17] "GET /admin/tracker/visithistory/ HTTP/1.1" 200 24172
+[28/Sep/2021 11:37:17] "GET /admin/jsi18n/ HTTP/1.1" 200 3195
